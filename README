@@ -1,6 +1,9 @@
-=== To install ===
-From project directoy:
-npm install
+AlphaZone4 API
 
-=== Mongo Database ===
-db.lists.ensureIndex({user_id:1});
+This was my first ever Node.JS app. There are lot of terrible and a lot of interesting things inside!
+
+This was built to replace a PHP implementation that wasn't holding up to the huge demand of the PlayStation Home community on update day.
+
+A lot of sections are missing, so this is meant purely for anyone curious how some of AlphaZone4 worked.
+
+- Cubehouse
