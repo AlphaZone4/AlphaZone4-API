@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title>AlphaZone4 API XDM Provider</title>
+        <script type="text/javascript" src="/easyXDM.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script type='text/javascript'>
+            var socket = new easyXDM.Socket({
+                onMessage: function(message, origin) {
+                    // try and parse this request
+                    var obj;
+                    try {
+                        obj = JSON.parse(message);
+                    } catch(e) {
+                        obj = false;
+                    }
+
+                    // if we can't parse this request, return error
+                    if (!obj) return socket.postMessage(JSON.stringify({error: "Error parsing JSON request"}));
+
+                    if (!obj.method) return socket.postMessage(JSON.stringify({error: "No method supplied"}));
+
+                    var d = {
+                        url: "/"+obj.method,
+                        dataType: 'json',
+                        success: function(json, a, b) {
+                            // return function callback for client
+                            json.XDMFunc = obj.XDMFunc;
+                            
+                            socket.postMessage(JSON.stringify(json));
+                        },
+                        error: function() {
+                            socket.postMessage("Failed.");
+                        }
+                    };
+
+                    if (obj.data) {
+                        // Making POST request
+                        d.type = "POST";
+                        d.data = obj.data;
+                    } else {
+                        // Making GET request
+                        d.type = "GET";
+                    }
+
+                    $.ajax(d);
+                },
+                // only allow alphazone4.com sites to use this provider
+                acl: "^https?\:\/\/(?:[a-zA-Z0-9]{1,8}\.)?alphazone4.com(?:\/.*)?$"
+            });
+        </script>
+    </body>
+</html>

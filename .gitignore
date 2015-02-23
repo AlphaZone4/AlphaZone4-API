@@ -1,0 +1,13 @@
+config.js
+.settings.xml
+node_modules
+static/stats.json
+static/*.sdat
+static/*.xml
+scripts/HomeMedia.db*
+scripts/renders*
+scripts
+mods
+renders*
+scripts/tmp*
+.qws

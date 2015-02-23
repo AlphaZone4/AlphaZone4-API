@@ -1,0 +1,6 @@
+=== To install ===
+From project directoy:
+npm install
+
+=== Mongo Database ===
+db.lists.ensureIndex({user_id:1});

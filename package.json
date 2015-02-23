@@ -1,0 +1,30 @@
+{
+	"name": "az4api",
+	"version": "0.0.1",
+	"dependencies": {
+		"mysql": "2.0.0-alpha4",
+		"socket.io": "0.8.7",
+		"utf8": "1.0.0",
+        "simple-xmpp": "*",
+        "node-stringprep": "*",
+        "xml2json": "*",
+        "PSNjs": "*",
+        "sqlite3": "*",
+        "imagemagick": "*",
+        "mime": "*",
+        "hiredis": "*",
+        "redis": "*",
+        "connect": "*",
+        "request": "*",
+        "cli-color": "*",
+        "xml2js": "*",
+        "underscore": "*",
+        "imagemagick": "0.1.3",
+        "rcon": "*",
+        "generic-pool": "*",
+        "moment": "*",
+        "etherpad-lite-client": "0.4.x",
+        "http-proxy": "*",
+        "phantom": "*"
+	}
+}

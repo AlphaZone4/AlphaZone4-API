@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+		<title>AlphaZone4 Item Database - Free European Items</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- CSS -->
+        <script>
+            // CSS
+            document.write("<link rel='stylesheet' type='text/css' href='build/style.css?"+(new Date().getTime())+"' />");
+            
+            // JS
+            document.write("<scr"+"ip"+"t src='build/az4db-jquery.js?"+(new Date().getTime())+"'><\/script>");
+        </script>
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+        <a href='http://alphazone4.com' target='_blank'>Powered by AlphaZone4</a>
+		<div id='database' class='az4db' style='max-width:600px'></div>
+        <script type='text/javascript'>
+            /* define page specific loading here */
+            az4db_init({
+                baseURL: "//" + window.location.host + window.location.pathname.replace(/\\/g,'/').replace(/\/[^\/]*$/, ''),
+                basePath: window.location.pathname.replace(/\\/g,'/').replace(/\/[^\/]*$/, ''),
+                regionLock: "EU",
+                categoryLinks: false,
+                loadModules: ["lists"],
+                editTools: false,
+                maxRows: 4
+            }, function(libs) {
+                var lists = libs[0];
+                var list = lists.create(null, null);
+                $("#database").append(list.body)
+                list.loadFree("EU");
+            });
+        </script>
+        <!-- Override modal to make it fit -->
+        <style>
+            .az4db .modal {
+                width: 550px;
+            }
+            
+            .az4db .item_detail_large p {
+                width: 180px;
+            }
+        </style>
+	</body>
+</html>

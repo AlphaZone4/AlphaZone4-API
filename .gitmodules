@@ -1,0 +1,3 @@
+[submodule "modules/easyXDM"]
+	path = modules/easyXDM
+	url = https://github.com/oyvindkinsey/easyXDM.git
