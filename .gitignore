@@ -7,7 +7,10 @@ static/*.xml
 scripts/HomeMedia.db*
 scripts/renders*
 scripts
-mods
 renders*
+mods/mod_admin.js
+mods/mod_catadmin.js
+mods/mod_docs.js
+mods/mod_spaces.js
 scripts/tmp*
 .qws
