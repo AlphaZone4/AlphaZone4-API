@@ -111,7 +111,7 @@ function server_reply(data, res, req, args) {
     } else {
         // check for JSONP allowance and print
         if (!args.nojsonp && comp.query.callback) {
-            res.end(((args.blocked)?"for (;;);":"")+comp.query.callback.replace(/[^a-zA-Z0-9\,\-\_]/g, '')+"("+JSON.stringify(data)+");", "utf8");
+            res.end(((args.blocked)?"for (;;);":"")+comp.query.callback.replace(/[^a-zA-Z0-9\.\,\-\_]/g, '')+"("+JSON.stringify(data)+");", "utf8");
         } else {
             res.end(JSON.stringify(data), 'utf-8');
         }
